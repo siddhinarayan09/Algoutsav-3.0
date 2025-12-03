@@ -3,7 +3,7 @@ import React from "react";
 
 const CollegeMap: React.FC = () => {
   const iframeSrc =
-    "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1325.0741364873988!2d84.90111082717578!3d22.25317346545672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sin!4v1764751887858!5m2!1sen!2sin";
+   "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1403.8653272933752!2d84.90132040403282!3d22.253358616828567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sin!4v1764753468351!5m2!1sen!2sin";
 
   return (
     <div
