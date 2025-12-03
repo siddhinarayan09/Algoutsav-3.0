@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-
+import Map from "./ui/Map";
 const Contact = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -137,11 +137,7 @@ const Contact = () => {
             </div>
 
             {/* Map Placeholder */}
-            <div className="mt-8 rounded-lg overflow-hidden border-2 border-neon-red/30 hover-glow h-64">
-              <div className="w-full h-full bg-card flex items-center justify-center">
-                <p className="text-muted-foreground italic">Map Embed Placeholder</p>
-              </div>
-            </div>
+            <Map/>
           </motion.div>
 
           {/* Contact Form */}
