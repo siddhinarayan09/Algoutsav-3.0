@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,78 +33,108 @@ const Navbar = () => {
   };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-background/95 backdrop-blur-md border-b border-neon-red/20"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 sm:h-20">
-          {/* Logo */}
-          <button
-            onClick={() => scrollToSection("#home")}
-            className="text-xl sm:text-2xl font-cinzel font-bold text-neon-red hover:animate-flicker transition-all"
-            style={{ textShadow: "var(--text-shadow-glow)" }}
-          >
-            Algoutsav 3.0
-          </button>
+    <>
+      {/* FLICKER ANIMATION */}
+      <style>{`
+        @keyframes flicker {
+          0% { opacity: 1; }
+          92% { opacity: 1; }
+          93% { opacity: 0.75; }
+          94% { opacity: 1; }
+          95% { opacity: 0.6; }
+          96% { opacity: 1; }
+          97% { opacity: 0.85; }
+          100% { opacity: 1; }
+        }
+        .flicker {
+          animation: flicker 4s infinite linear;
+        }
+      `}</style>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-6">
-            {navLinks.map((link) => (
-              <button
-                key={link.name}
-                onClick={() => scrollToSection(link.href)}
-                className="text-foreground hover:text-neon-red transition-colors duration-300 text-sm font-medium"
-              >
-                {link.name}
-              </button>
-            ))}
-            <Button
-              variant="outline"
-              className="border-neon-red text-neon-red hover:bg-neon-red hover:text-primary-foreground hover-glow"
-              onClick={() => window.open("https://unstop.com", "_blank")}
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled
+            ? "bg-black/40 backdrop-blur-lg border-b border-red-600/10"
+            : "bg-transparent"
+        }`}
+      >
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16 sm:h-20">
+
+            {/* LEFT — LOGO */}
+            <button
+              onClick={() => scrollToSection("#home")}
+              className="flex items-center"
             >
-              Register on Unstop
-            </Button>
-          </div>
+              <img
+                src="https://res.cloudinary.com/dwh7xuupf/image/upload/v1764781238/aps_logo-removebg-preview_e10glw.png"
+                alt="Algoutsav Logo"
+                className="h-14 sm:h-16 w-auto object-contain"
+              />
+            </button>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden text-foreground hover:text-neon-red transition-colors"
-          >
-            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
-        </div>
-      </div>
+            {/* CENTER — NAV LINKS */}
+            <div className="hidden lg:flex flex-1 justify-center space-x-10">
+              {navLinks.map((link) => (
+                <button
+                  key={link.name}
+                  onClick={() => scrollToSection(link.href)}
+                  className="text-gray-200 hover:text-red-500 flicker transition-all 
+                  duration-300 text-sm font-medium tracking-wide"
+                >
+                  {link.name}
+                </button>
+              ))}
+            </div>
 
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="lg:hidden bg-card/98 backdrop-blur-lg border-t border-neon-red/20">
-          <div className="container mx-auto px-4 py-6 space-y-4">
-            {navLinks.map((link) => (
-              <button
-                key={link.name}
-                onClick={() => scrollToSection(link.href)}
-                className="block w-full text-left text-foreground hover:text-neon-red transition-colors duration-300 text-base font-medium py-2"
-              >
-                {link.name}
+            {/* RIGHT — ALGOUTSAV LOGO */}
+            <div className="hidden lg:flex items-center">
+              <button onClick={() => scrollToSection("#home")}>
+                <img
+                  src="https://res.cloudinary.com/dwh7xuupf/image/upload/v1764781618/aulogo-removebg-preview_sovesk.png"
+                  alt="Algoutsav Logo"
+                  className="h-14 sm:h-16 w-auto object-contain"
+                />
               </button>
-            ))}
-            <Button
-              variant="outline"
-              className="w-full border-neon-red text-neon-red hover:bg-neon-red hover:text-primary-foreground"
-              onClick={() => window.open("https://unstop.com", "_blank")}
+            </div>
+
+            {/* MOBILE MENU BUTTON */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="lg:hidden text-gray-200 hover:text-red-500 transition-colors"
             >
-              Register on Unstop
-            </Button>
+              {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
           </div>
         </div>
-      )}
-    </nav>
+
+        {/* MOBILE MENU */}
+        {isMobileMenuOpen && (
+          <div className="lg:hidden bg-black/90 backdrop-blur-lg border-t border-red-600/20">
+            <div className="container mx-auto px-4 py-6 space-y-4">
+              {navLinks.map((link) => (
+                <button
+                  key={link.name}
+                  onClick={() => scrollToSection(link.href)}
+                  className="block w-full text-left text-gray-200 hover:text-red-500 
+                  flicker transition-all duration-300 text-lg font-medium py-2"
+                >
+                  {link.name}
+                </button>
+              ))}
+
+              <button onClick={() => scrollToSection("#home")}>
+                <img
+                  src="https://res.cloudinary.com/dwh7xuupf/image/upload/v1764781618/aulogo-removebg-preview_sovesk.png"
+                  alt="Algoutsav Logo"
+                  className="h-14 sm:h-16 w-auto object-contain"
+                />
+              </button>
+            </div>
+          </div>
+        )}
+      </nav>
+    </>
   );
 };
 

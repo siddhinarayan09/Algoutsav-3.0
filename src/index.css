@@ -1,8 +1,10 @@
+@import url('https://fonts.cdnfonts.com/css/itc-benguiat-std');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Definition of the design system.
 All colors MUST be HSL.
 */
 
@@ -61,6 +63,43 @@ All colors MUST be HSL.
     --transition-glow: all 0.4s ease-in-out;
   }
 }
+  
+.stranger-things-font {
+  font-family: 'ITC Benguiat Std', serif !important;
+  letter-spacing: 0.05em;
+}
+
+.glitch {
+  animation: glitch-hero 0.7s ease-in-out forwards;
+}
+
+@keyframes glitch-hero {
+  0% {
+    transform: translate(0);
+    filter: hue-rotate(0deg);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+    filter: hue-rotate(15deg);
+  }
+  40% {
+    transform: translate(2px, -2px);
+    filter: hue-rotate(-15deg);
+  }
+  60% {
+    transform: translate(-3px, 3px);
+    filter: hue-rotate(25deg);
+  }
+  80% {
+    transform: translate(3px, -3px);
+    filter: hue-rotate(-25deg);
+  }
+  100% {
+    transform: translate(0);
+    filter: hue-rotate(0deg);
+  }
+}
+
 
 @layer base {
   * {
