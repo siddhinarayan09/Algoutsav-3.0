@@ -65,12 +65,18 @@ const Hero = () => {
             </button>
 
             <button
-              className="button-49"
-              data-text="Event Brochure"
-              onClick={() => window.open("https://unstop.com", "_blank")}
-            >
-              Event Brochure
-            </button>
+  className="button-49"
+  data-text="Event Brochure"
+  onClick={() => {
+    const link = document.createElement("a");
+    link.href = "/Algoutsav-event-brochure.pdf";     
+    link.download = "Algoutsav-Brochure.pdf"; 
+    link.click();
+  }}
+>
+  Event Brochure
+</button>
+
           </motion.div>
         </motion.div>
 
