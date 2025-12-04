@@ -41,7 +41,7 @@ const Hero = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.9 }}
           >
-            Step into the Upside Down of competitive programming, with Algoutsav 3.0!
+            Step into the Upside Down of competitive programming, with Algoutsav 3.0, presented to you by APS X SAC, NIT Rourkela!
           </motion.p>
 
           {/* Buttons — unaffected by glitch */}

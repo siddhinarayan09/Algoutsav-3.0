@@ -54,7 +54,7 @@ const About = () => {
         >
           <p className="text-foreground text-2xl leading-relaxed">
             <span className="text-neon-red font-semibold">AlgoUtsav</span> returns with its 3rd edition, and this time it's bigger and better than ever! 
-            <span className="text-neon-red font-semibold"> AlgoUtsav 3.0</span> is a national-level competitive programming contest organized by the Algorithmic and Programming Society (APS) of NIT Rourkela. The event is designed to challenge and inspire programmers from across India to showcase their skills and push their problem solving abilities to their limits..
+            <span className="text-neon-red font-semibold"> AlgoUtsav 3.0</span> is a national-level competitive programming contest organized by the Algorithmic and Programming Society (APS) of NIT Rourkela, under the Technical Society of Student Activity Centre (SAC), NIT Rourkela. The event is designed to challenge and inspire programmers from across India to showcase their skills and push their problem solving abilities to their limits..
           </p>
 
           <Button size="lg" variant="outline" onClick={() => window.open("https://chat.whatsapp.com/CWSSQsaQ4R56i095LfAZS5/")} className="font-cinzel text-lg text-neon-red border-red-800">

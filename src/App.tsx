@@ -13,7 +13,7 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <>
-    <div className="fixed z-[-1] inset-0 z-0">
+    <div className="fixed inset-0 z-0">
       <img
         src={heroBg}
         alt="Stranger Things themed dark forest"
@@ -63,7 +63,7 @@ const App = () => (
             }}
           />
         ))}
-        <div style={{ width: "100%", height: "600px", position: "relative" }}>
+        <div style={{ width: "100%", height: "100vh", position: "relative" }}>
           <LightRays
             raysOrigin="top-center"
             raysColor="#A81F03"

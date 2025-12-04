@@ -118,7 +118,6 @@ const Prizes = () => {
   const prizePool = {
     icon: Trophy,
     amount: "₹2 Lakhs+",
-    description: "Total prize money to be won",
   };
 
   const teamItems: PrizeItem[] = [
@@ -182,19 +181,18 @@ const Prizes = () => {
               <Trophy className="text-neon-red" size={38} />
             </div>
             <div>
-              <div className="text-sm text-muted-foreground">Prize Pool</div>
+              <div className="text-sm text-muted-foreground font-cinzel">Prize Pool</div>
               <div className="font-cinzel font-bold text-3xl text-neon-red">
                 {prizePool.amount}
               </div>
-              <div className="text-sm text-muted-foreground">{prizePool.description}</div>
             </div>
           </div>
         </motion.div>
 
         {/* TWO BOXES SIDE BY SIDE */}
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <PrizeBox title="Team Contest — Winners" items={teamItems} isInView={isInView} />
-          <PrizeBox title="Individual Contest — Winners" items={individualItems} isInView={isInView} />
+          <PrizeBox title="Team Contest (Prizes Worth)" items={teamItems} isInView={isInView} />
+          <PrizeBox title="Individual Contest (Prizes Worth)" items={individualItems} isInView={isInView} />
         </div>
 
         {/* Footer */}

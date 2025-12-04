@@ -65,7 +65,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-20 sm:py-32 bg-muted/20 relative overflow-hidden"
+      className="py-20 sm:py-32 relative overflow-hidden"
     >
       {/* Fog Effect */}
       <div className="absolute inset-0 bg-gradient-radial from-neon-red/10 via-transparent to-transparent opacity-20" />

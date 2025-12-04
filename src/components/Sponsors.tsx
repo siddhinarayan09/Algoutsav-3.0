@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { ScrollVelocityContainer, ScrollVelocityRow } from "./ui/scroll-based-velocity";
 
 const Sponsors = () => {
   const ref = useRef(null);
@@ -11,6 +12,7 @@ const Sponsors = () => {
     { name: "Algozenith", src: "https://res.cloudinary.com/dwh7xuupf/image/upload/v1764849789/algozenith_hgwztq.png" },
     { name: "Ask Senior", src: "https://res.cloudinary.com/dwh7xuupf/image/upload/v1764849829/senior_bqh8ie.jpg" },
     { name: "Fastech", src: "https://res.cloudinary.com/dwh7xuupf/image/upload/v1764849813/fastech_k8uxpk.png"  },
+    { name: "ICFDR", src: "" }
   ];
 
   return (
@@ -84,6 +86,14 @@ const Sponsors = () => {
           </div>
         </motion.div>
       </div>
+      <ScrollVelocityContainer className="absolute left-0 w-screen font-cinzel text-xl md:text-2xl font-bold text-neon-red mt-12">
+          <ScrollVelocityRow baseVelocity={5} direction={1}>
+            Support our initiative by sponsoring AlgoUtsav! &nbsp; • &nbsp;
+          </ScrollVelocityRow>
+          <ScrollVelocityRow baseVelocity={5} direction={-1}>
+            Contact on our mail or our socials &nbsp; • &nbsp;
+          </ScrollVelocityRow>
+        </ScrollVelocityContainer>
     </section>
   );
 };
