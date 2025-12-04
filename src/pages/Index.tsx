@@ -6,6 +6,7 @@ import About from "@/components/About";
 import Timeline from "@/components/Timeline";
 import Prizes from "@/components/Prizes";
 import Sponsors from "@/components/Sponsors";
+import Gallery from "@/components/gallery"; 
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -15,15 +16,9 @@ const Index = () => {
 
   return (
     <>
-      {/* Preloader */}
       {isLoading && <Preloader onComplete={() => setIsLoading(false)} />}
+      {isLoading && <div className="fixed inset-0 bg-black z-[50]" />}
 
-      {/* Black background behind preloader */}
-      {isLoading && (
-        <div className="fixed inset-0 bg-black z-[50]" />
-      )}
-
-      {/* Full website only after preloader finishes */}
       {!isLoading && (
         <div className="min-h-screen bg-background">
           <Navbar />
@@ -32,6 +27,9 @@ const Index = () => {
           <Timeline />
           <Prizes />
           <Sponsors />
+
+          <Gallery />
+
           <FAQ />
           <Contact />
           <Footer />
